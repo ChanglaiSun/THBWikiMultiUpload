@@ -1,8 +1,8 @@
-# THBWiki Multi Upload tool
+# THBWiki Multi Upload Tool
 A simple python tool to upload files to THBWiki  
-Note this tool will upload every file in the directory.
+Note that this tool will upload every file in the directory.
 ## Requirements
-just need module [requests](https://github.com/psf/requests)
+just need module [Requests](https://github.com/psf/requests)
 ```shell script
 pip install requests
 ```
