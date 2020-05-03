@@ -17,7 +17,7 @@ def read_bot_token():
         botpassword=XXXXX
     """
 
-    f = open(r"BotToken.txt", "r")
+    f = open(r"BotToken.txt", "r", encoding="utf-8")
 
     bot_token = {}
 

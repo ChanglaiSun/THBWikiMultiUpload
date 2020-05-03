@@ -20,7 +20,7 @@ Since you need to upload files, you will need at least those permissions:
 
 After creating the bot, just create a **BotToken.txt** in the **main.py** file's
 same directory.  
-The **BotToken.txt** file should be like this
+The **BotToken.txt** file should be encoded in UTF-8 and like this:
 ```text
 botusername=XXXXX
 botpassword=XXXXX
