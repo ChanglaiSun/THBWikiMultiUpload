@@ -1,12 +1,12 @@
-#THBWiki Multi Upload tool
+# THBWiki Multi Upload tool
 A simple python tool to upload files to THBWiki  
 Note this tool will upload every file in the directory.
-##Requirements
+## Requirements
 just need module [requests](https://github.com/psf/requests)
 ```shell script
 pip install requests
 ```
-##Start
+## Start
 You need to create a [BotPassword](https://thwiki.cc/Special:BotPasswords).
 >Bot passwords allow access to a user account via the
 > API without using the account's main login credentials.
@@ -26,7 +26,7 @@ botusername=XXXXX
 botpassword=XXXXX
 ```
 Then you can run the python file.
-##Run
+## Run
 Run the python file.  
 If you set the bot correctly, you will see the terminal shows:
 ```shell script
@@ -42,7 +42,7 @@ For example:
 [[分类:poprication]][[分类:周边图片]]
 ``` 
 Terminal will show the status of each file.
-##Uploading Example
+## Uploading Example
 ![example](https://wx1.sinaimg.cn/large/9bd2f91fgy1gefprmju36j20td07babd.jpg)
-##About
+## About
 If you have any problem, just contact [User:SunCL](https://thwiki.cc/User:SunCL).
