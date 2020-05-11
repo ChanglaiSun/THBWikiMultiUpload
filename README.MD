@@ -41,7 +41,7 @@ For example:
 ```text
 [[分类:poprication]][[分类:周边图片]]
 ``` 
-Terminal will show the status of each file.
+Console will show the status of each file.
 ## Uploading Example
 ![example](https://wx1.sinaimg.cn/large/9bd2f91fgy1gefprmju36j20td07babd.jpg)
 ## About
