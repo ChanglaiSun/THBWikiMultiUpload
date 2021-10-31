@@ -126,9 +126,19 @@ def upload_file(filepath, filename, csrftoken, comment=""):
 
     data = response.json()
 
-    if data["upload"]["result"] == "Success":
-        print("Upload {name} Success".format(name=filename))
-    else:
+    try:
+        upload_status = data["upload"]["result"]
+        if upload_status == "Success":
+            print("Upload {name} Success".format(name=filename))
+        else:
+            print("Upload {name} failed".format(name=filename))
+    except KeyError:
+        err = data.get('error')
+        err_code = err.get('code')
+        err_info = err.get('info')
+        if(err and err_code and err_info):
+            print(err_code)
+            print(f" {err_info}")
         print("Upload {name} failed".format(name=filename))
 
     return
