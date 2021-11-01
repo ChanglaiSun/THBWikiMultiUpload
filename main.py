@@ -4,6 +4,8 @@ from urllib.parse import quote
 
 S = requests.Session()
 URL = "https://thwiki.cc/api.php"
+ALLOW_LIST = ("png", "gif", "jpg", "jpeg",
+              "pdf", "mid", "midi", "ogg", "mp3", "svg")
 
 
 def read_bot_token():
@@ -113,7 +115,8 @@ def upload_file(filepath, filename, csrftoken, comment=""):
     encoded_filename = quote(filename)
 
     # FILE = {"file":("红黑月历.png",open(filepath,"rb"),"multipart/form-data")}
-    file = {"file": (encoded_filename, open(filepath, "rb"), "multipart/form-data")}
+    file = {"file": (encoded_filename, open(
+        filepath, "rb"), "multipart/form-data")}
 
     response = S.post(url=URL, files=file, data={
         "action": "upload",
@@ -146,8 +149,8 @@ def upload_file(filepath, filename, csrftoken, comment=""):
 
 def multi_upload(path, csrftoken, comment=""):
     os.chdir(path)
-    files = os.listdir(path)
-
+    files = [fn for fn in os.listdir(path) if fn.endswith(ALLOW_LIST)]
+ 
     for f in files:
         upload_file(f, f, csrftoken, comment)
 
@@ -161,5 +164,6 @@ CSRF_TOKEN = retrieve_csrf_token()  # CSRF_TOKEN can use for many times
 # upload_file(FILE_PATH,"2020-03-27-3.png",CSRF_TOKEN)
 
 PATH = input("Please input directory path:\n")
-COMMENT = input("Please input upload comment(support wikitext) within single line:\n")
+COMMENT = input(
+    "Please input upload comment(support wikitext) within single line:\n")
 multi_upload(PATH, CSRF_TOKEN, COMMENT)
